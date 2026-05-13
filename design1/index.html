@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>~/sourabh-gome — senior software engineer</title>
+  <meta name="description" content="Sourabh Gome — Senior Software Engineer. Distributed systems, device infra, AI tooling." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <div class="terminal">
+    <header class="term-bar">
+      <div class="term-dots">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="term-title">— sourabh@portfolio: ~ —</div>
+      <div class="term-spacer"></div>
+    </header>
+
+    <main class="term-body">
+      <!-- whoami -->
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> whoami</p>
+        <pre class="ascii">
+ ____                       _     _      ____
+/ ___|  ___  _   _ _ __ __ _| |__ | |__  / ___| ___  _ __ ___   ___
+\___ \ / _ \| | | | '__/ _` | '_ \| '_ \| |  _ / _ \| '_ ` _ \ / _ \
+ ___) | (_) | |_| | | | (_| | |_) | | | | |_| | (_) | | | | | |  __/
+|____/ \___/ \__,_|_|  \__,_|_.__/|_| |_|\____|\___/|_| |_| |_|\___|
+        </pre>
+        <p class="out">→ Senior Software Engineer @ BrowserStack</p>
+        <p class="out">→ Mumbai, India · 4.5+ years</p>
+        <p class="out">→ Designing distributed systems · device infrastructure · AI tooling<span class="cursor">▍</span></p>
+      </section>
+
+      <!-- about -->
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> cat about.md</p>
+        <div class="md">
+          <p>I design and build infrastructure that powers automated testing across a global fleet of real devices.</p>
+          <p>My work sits at the intersection of <span class="hl">distributed systems</span>, <span class="hl">device automation</span>, and most recently, <span class="hl">AI tooling</span> — building internal assistants powered by RAG pipelines and Model Context Protocol (MCP) integrations.</p>
+          <p>I care about systems that scale, communicate reliably under failure, and disappear when they work.</p>
+        </div>
+      </section>
+
+      <!-- experience -->
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> tree experience/ --depth 2</p>
+        <pre class="tree">
+experience/
+├── <span class="dir">browserstack/</span>  <span class="meta">[Oct 2021 — Present]</span>
+│   ├── <span class="role">senior-software-engineer.md</span>  <span class="meta">(Apr 2025 →)</span>
+│   │   ├── built RAG debugging assistant + Slack + MCP <span class="num">→ 50% ops reduction</span>
+│   │   ├── redesigned VoiceOver automation, removed host dep <span class="num">→ 5× scalability</span>
+│   │   └── optimized Android device cleanup <span class="num">→ 215s→172s (20% / 30% median)</span>
+│   └── <span class="role">software-engineer.md</span>  <span class="meta">(Oct 2021 — Mar 2025)</span>
+│       ├── scalable Apple Pay validation framework <span class="num">→ 95% card success</span>
+│       ├── distributed TestFlight install system <span class="num">→ thousands of devices</span>
+│       ├── Android video injection (low-level API interception)
+│       ├── browser-level video injection architecture
+│       ├── parallel device patching execution
+│       ├── Apple Pay automation w/ OpenCV + WebDriverAgent
+│       └── Safari settings control system
+└── <span class="dir">artha-energy/</span>     <span class="meta">[Sep 2020 — Jun 2021]</span>
+    └── <span class="role">intern.md</span>
+        ├── backend components + data models
+        └── frontend API visualizations
+        </pre>
+      </section>
+
+      <!-- skills -->
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> skills --list --group</p>
+        <div class="skills">
+          <div class="skill-row"><span class="skill-key">languages</span><span class="skill-sep">=</span><span class="skill-val">[java, python, c++, javascript, swift, objective-c]</span></div>
+          <div class="skill-row"><span class="skill-key">system_design</span><span class="skill-sep">=</span><span class="skill-val">[distributed-systems, scalability, ha, fault-tolerance, concurrency, api-design]</span></div>
+          <div class="skill-row"><span class="skill-key">backend</span><span class="skill-sep">=</span><span class="skill-val">[spring-boot, rest, microservices]</span></div>
+          <div class="skill-row"><span class="skill-key">databases</span><span class="skill-sep">=</span><span class="skill-val">[mysql, postgresql, mongodb]</span></div>
+          <div class="skill-row"><span class="skill-key">ai_ml</span><span class="skill-sep">=</span><span class="skill-val">[rag, vector-dbs, embeddings, llm-systems, mcp]</span></div>
+          <div class="skill-row"><span class="skill-key">tools</span><span class="skill-sep">=</span><span class="skill-val">[git, opencv, xcode, android-studio]</span></div>
+        </div>
+      </section>
+
+      <!-- projects -->
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> ls -lh projects/</p>
+        <pre class="ls">
+total 2
+<span class="meta">-rwxr-xr-x</span>  1 sourabh  staff   1.2K  <span class="dir">path-finding-visualizer/</span>
+                                       └─ visualize dijkstra / bfs / dfs with step-by-step animation
+<span class="meta">-rwxr-xr-x</span>  1 sourabh  staff   0.9K  <span class="dir">remote-desktop-manager/</span>
+                                       └─ multi-threaded socket app for remote control + file transfer
+        </pre>
+      </section>
+
+      <!-- achievements -->
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> cat achievements.log</p>
+        <pre class="log">
+<span class="ts">[2024]</span> <span class="ok">[OK]</span>  Champions Award · 2× — outstanding engineering performance @ BrowserStack
+<span class="ts">[2023]</span> <span class="ok">[OK]</span>  Blackbelt Nomination — technical excellence
+<span class="ts">[----]</span> <span class="ok">[OK]</span>  LeetCode 1000+ solved · CodeChef 3-star (1726)
+<span class="ts">[2020]</span> <span class="ok">[OK]</span>  Google Code Jam qualifier
+<span class="ts">[2019]</span> <span class="ok">[OK]</span>  Google Code Jam qualifier
+        </pre>
+      </section>
+
+      <!-- contact -->
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> contact --me</p>
+        <div class="contact">
+          <a href="mailto:sourabhgome@gmail.com">→ email     <span class="addr">sourabhgome@gmail.com</span></a>
+          <a href="tel:+919753338612">→ phone     <span class="addr">+91 97533 38612</span></a>
+          <a href="https://linkedin.com/in/sourabhgome" target="_blank" rel="noopener">→ linkedin  <span class="addr">/in/sourabhgome</span></a>
+          <a href="https://github.com/sourabhgome" target="_blank" rel="noopener">→ github    <span class="addr">@sourabhgome</span></a>
+          <a href="https://leetcode.com/u/sourabhgome/" target="_blank" rel="noopener">→ leetcode  <span class="addr">@sourabhgome</span></a>
+        </div>
+      </section>
+
+      <section class="block">
+        <p class="cmd"><span class="prompt">sourabh@portfolio</span><span class="sep">:</span><span class="path">~</span><span class="sep">$</span> <span class="cursor">▍</span></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

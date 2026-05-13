@@ -1,0 +1,173 @@
+/* ===== Terminal Design ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --bg: #0a0e0c;
+  --term-bg: #0d1117;
+  --term-bar: #161b22;
+  --text: #c9d1d9;
+  --text-dim: #8b949e;
+  --prompt: #7ee787;
+  --path: #79c0ff;
+  --sep: #6e7681;
+  --hl: #ffa657;
+  --num: #ff7b72;
+  --ok: #3fb950;
+  --dir: #79c0ff;
+  --role: #d2a8ff;
+  --meta: #8b949e;
+  --border: #30363d;
+}
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.65;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* CRT scanlines */
+.scanlines {
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.015) 0px,
+    rgba(255,255,255,0.015) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* Terminal window */
+.terminal {
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--term-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(126,231,135,0.05);
+  overflow: hidden;
+}
+
+.term-bar {
+  background: var(--term-bar);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.term-dots { display: flex; gap: 7px; flex: 0 0 auto; }
+.term-dots .dot { width: 12px; height: 12px; border-radius: 50%; display: block; }
+.dot.red { background: #ff5f57; }
+.dot.yellow { background: #febc2e; }
+.dot.green { background: #28c840; }
+.term-title {
+  flex: 1; text-align: center;
+  color: var(--text-dim);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+.term-spacer { width: 54px; }
+
+.term-body {
+  padding: 24px 22px 40px;
+}
+
+.block { margin-bottom: 28px; }
+
+/* Prompts */
+.cmd {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+.prompt { color: var(--prompt); font-weight: 600; }
+.sep { color: var(--sep); }
+.path { color: var(--path); }
+.cmd, .cmd * { user-select: text; }
+
+/* ASCII art */
+.ascii {
+  color: var(--prompt);
+  margin: 12px 0;
+  font-size: 12px;
+  line-height: 1.2;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+/* Output lines */
+.out {
+  margin: 2px 0;
+  color: var(--text);
+  padding-left: 2px;
+}
+.cursor {
+  display: inline-block;
+  background: var(--prompt);
+  color: var(--prompt);
+  width: 8px;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Markdown-ish blocks */
+.md { padding: 4px 0 0 10px; border-left: 2px solid var(--border); margin-left: 4px; }
+.md p { margin: 8px 0; padding-left: 10px; color: var(--text-dim); }
+.hl { color: var(--hl); font-weight: 500; }
+
+/* Tree output */
+.tree, .ls, .log {
+  margin: 6px 0;
+  font-size: 13.5px;
+  line-height: 1.7;
+  overflow-x: auto;
+  white-space: pre;
+  color: var(--text);
+}
+.tree .dir, .ls .dir { color: var(--dir); font-weight: 500; }
+.tree .role { color: var(--role); }
+.tree .meta, .ls .meta, .log .ts { color: var(--meta); }
+.tree .num { color: var(--num); font-weight: 500; }
+.log .ok { color: var(--ok); font-weight: 500; }
+
+/* Skills key=value */
+.skills { padding: 4px 0 0; }
+.skill-row {
+  padding: 3px 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.skill-key { color: var(--path); }
+.skill-sep { color: var(--sep); margin: 0 6px; }
+.skill-val { color: var(--hl); }
+
+/* Contact links */
+.contact { display: flex; flex-direction: column; gap: 3px; padding-top: 4px; }
+.contact a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 4px 0;
+  display: inline-block;
+  transition: color .15s;
+}
+.contact a:hover { color: var(--prompt); }
+.contact .addr { color: var(--path); margin-left: 4px; }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .terminal { margin: 0; border-radius: 0; border-left: 0; border-right: 0; min-height: 100vh; }
+  .ascii { font-size: 8px; }
+  body { font-size: 13px; }
+  .tree, .ls, .log { font-size: 12px; }
+}
+
+::selection { background: rgba(126,231,135,0.25); color: var(--text); }
